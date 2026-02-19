@@ -1,0 +1,30 @@
+declare const styles: {
+  cesocHero: string;
+  heroContainer: string;
+  loading: string;
+  spinner: string;
+  error: string;
+  noNews: string;
+  carousel: string;
+  carouselInner: string;
+  slide: string;
+  active: string;
+  slideBackground: string;
+  slideOverlay: string;
+  slideContent: string;
+  slideText: string;
+  slideTitle: string;
+  slideDescription: string;
+  slideMeta: string;
+  slideDate: string;
+  slideAuthor: string;
+  slideLink: string;
+  carouselControl: string;
+  prev: string;
+  next: string;
+  carouselIndicators: string;
+  indicator: string;
+  counter: string;
+};
+
+export default styles;
