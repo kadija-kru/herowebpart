@@ -13,6 +13,7 @@ import CesocHero from './components/CesocHero';
 import { ICesocHeroProps } from './components/ICesocHeroProps';
 
 export interface ICesocHeroWebPartProps {
+  title: string;
   description: string;
   newsCount: number;
   autoPlayInterval: number;
@@ -25,6 +26,7 @@ export default class CesocHeroWebPart extends BaseClientSideWebPart<ICesocHeroWe
     const element: React.ReactElement<ICesocHeroProps> = React.createElement(
       CesocHero,
       {
+        title: this.properties.title,
         description: this.properties.description,
         context: this.context,
         newsCount: this.properties.newsCount || 5,
@@ -55,6 +57,9 @@ export default class CesocHeroWebPart extends BaseClientSideWebPart<ICesocHeroWe
             {
               groupName: strings.BasicGroupName,
               groupFields: [
+                PropertyPaneTextField('title', {
+                  label: strings.TitleFieldLabel
+                }),
                 PropertyPaneTextField('description', {
                   label: strings.DescriptionFieldLabel
                 }),
