@@ -1,6 +1,10 @@
 declare const styles: {
   cesocHero: string;
   heroContainer: string;
+  heroLeft: string;
+  heroTitle: string;
+  heroDescription: string;
+  heroRight: string;
   loading: string;
   spinner: string;
   error: string;

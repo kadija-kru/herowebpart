@@ -59,36 +59,46 @@ export default class CesocHero extends React.Component<ICesocHeroProps, ICesocHe
 
   public render(): React.ReactElement<ICesocHeroProps> {
     const { loading, error, newsItems } = this.state;
+    const { title, description } = this.props;
 
     return (
       <div className={styles.cesocHero}>
         <div className={styles.heroContainer}>
-          {loading && (
-            <div className={styles.loading}>
-              <div className={styles.spinner}></div>
-              <p>{strings.LoadingMessage}</p>
-            </div>
-          )}
+          <div className={styles.heroLeft}>
+            <h1 className={styles.heroTitle}>{title || strings.DefaultHeroTitle}</h1>
+            {description && (
+              <p className={styles.heroDescription}>{description}</p>
+            )}
+          </div>
 
-          {error && (
-            <div className={styles.error}>
-              <p>{error}</p>
-            </div>
-          )}
+          <div className={styles.heroRight}>
+            {loading && (
+              <div className={styles.loading}>
+                <div className={styles.spinner}></div>
+                <p>{strings.LoadingMessage}</p>
+              </div>
+            )}
 
-          {!loading && !error && newsItems.length > 0 && (
-            <NewsCarousel
-              newsItems={newsItems}
-              autoPlayInterval={this.props.autoPlayInterval}
-              locale={this.props.context.pageContext.cultureInfo.currentUICultureName}
-            />
-          )}
+            {error && (
+              <div className={styles.error}>
+                <p>{error}</p>
+              </div>
+            )}
 
-          {!loading && !error && newsItems.length === 0 && (
-            <div className={styles.noNews}>
-              <p>{strings.NoNewsMessage}</p>
-            </div>
-          )}
+            {!loading && !error && newsItems.length > 0 && (
+              <NewsCarousel
+                newsItems={newsItems}
+                autoPlayInterval={this.props.autoPlayInterval}
+                locale={this.props.context.pageContext.cultureInfo.currentUICultureName}
+              />
+            )}
+
+            {!loading && !error && newsItems.length === 0 && (
+              <div className={styles.noNews}>
+                <p>{strings.NoNewsMessage}</p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     );

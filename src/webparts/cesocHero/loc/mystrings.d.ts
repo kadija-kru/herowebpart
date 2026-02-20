@@ -1,6 +1,7 @@
 declare interface ICesocHeroWebPartStrings {
   PropertyPaneDescription: string;
   BasicGroupName: string;
+  TitleFieldLabel: string;
   DescriptionFieldLabel: string;
   SiteUrlFieldLabel: string;
   SiteUrlFieldDescription: string;
@@ -10,6 +11,7 @@ declare interface ICesocHeroWebPartStrings {
   LoadingMessage: string;
   ErrorMessage: string;
   NoNewsMessage: string;
+  DefaultHeroTitle: string;
   ReadMoreLink: string;
   AuthorPrefix: string;
   PrevSlideAriaLabel: string;
